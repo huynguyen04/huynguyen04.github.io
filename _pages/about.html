@@ -10,9 +10,8 @@ redirect_from:
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Huy Nguyen's Portfolio - Experience</title>
+    <title>Huy Nguyen's Portfolio</title>
     <style>
-        /* General Styles */
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
@@ -20,81 +19,203 @@ redirect_from:
             background: #fff;
         }
         .timeline-container {
-            max-width: 900px;
-            padding: auto;
-            margin-left: 20px;
+            position: relative;
+            max-width: 1000px;
+            margin-left: 10px;
+        }
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 58px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #ccc;
         }
         .timeline-block {
-            background: #f4f4f4;
-            border-radius: 4px;
-            margin-bottom: 10px;
-            padding: 20px;
             position: relative;
+            margin-bottom: 50px;
+            padding-left: 100px;
         }
-        .milestone {
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: 45px;
+            top: 0;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #3f51b5;
+            border: 4px solid #fff;
+        }
+        .timeline-block .milestone {
             font-size: 18px;
             color: #333;
+            margin-bottom: 5px;
             font-weight: bold;
         }
-        .details {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255,255,255,0.9);
-            padding: 20px;
-            box-sizing: border-box;
+        .timeline-block .details {
+            margin-top: 10px;
+            padding: 15px;
+            background: #f4f4f4;
             border-radius: 4px;
-            font-size: 15px;
-        }
-        .close {
-            display: none;
-        }
-        /* Checkbox Hack */
-        .detail-toggle {
-            display: none;
-        }
-        .detail-toggle:checked + label > .details {
-            display: block;
-        }
-        .detail-toggle:checked + label > .close {
-            display: block;
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            cursor: pointer;
-            font-size: 20px;
-            background-color: #f4f4f4;
-            border: none;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            line-height: 30px;
-            text-align: center;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
         }
     </style>
 </head>
 <body>
 
-<section class="timeline-container">
-    <h2>💼 Experience</h2>
-    <div class="timeline-block">
-        <input type="checkbox" id="toggle-detail-1" class="detail-toggle">
-        <label for="toggle-detail-1">
+<section id="introduction">
+    <h1>👉 Introduction</h1>
+    <hr>
+    <p>Hi there!👋 I'm Huy Nguyen, a second-year student at the University of Virginia majoring in Computer Science with a minor in Applied Mathematics.</p>
+    <p>Originally from Ho Chi Minh City, Vietnam, I moved to the U.S. to further my studies as an international student with a long-term goal of pursuing a Ph.D. in Computer Science.</p>
+    <p>Currently, I am involved in <em>Computer Architecture</em> research at the <a href="https://insight-cal.github.io/">Insight Lab</a> as well as collaborating on projects with professors in the UVA School of Engineering.</p>
+    <p>Other than that, I also enjoy doing academic mentoring jobs as a <a href="https://huy310304.github.io/teaching/">Teaching Assistant and Grader</a> for Applied Mathematics Courses.</p>
+    <blockquote>The more you sleep, the higher your GPA. <img src="https://media.giphy.com/media/itdYhaQ5GKXczC1WFJ/giphy.gif" width="40"></blockquote>
+</section>
+
+<br>
+  
+<section id="education">
+    <h1>🎓 Education</h1>
+    <hr>
+    <table style="border-collapse: collapse; border: none;">
+        <tr>
+            <td rowspan="2" style="border: none; width: 90px; padding-right: 5px; vertical-align: top;">
+                <a href="https://engineering.virginia.edu/">
+                    <img src="https://github.com/huy310304/huy310304.github.io/assets/114793725/ee13b63c-ecf7-435c-b788-e290c8a7a6a0" width="70">
+                </a>
+            </td>
+            <td style="border: none; font-weight: bold; font-size: 20px; line-height: 1; padding-bottom: 5px;">University of Virginia, 2026</td>
+        </tr>
+        <tr>
+            <td style="border: none; font-size: 20px; font-style: italic; line-height: 1; padding-top: 5px;">B.S. in Computer Science and Minor in Applied Mathematics - GPA: 3.989</td>
+        </tr>
+    </table>
+    
+    <table style="border: none;">
+        <tr style="border: none;">
+            <td rowspan="2" style="border: none; width: 90px; padding-right: 5px; vertical-align: top;">
+                <a href="https://ptnk.edu.vn/">
+                    <img src="https://github.com/huy310304/huy310304.github.io/assets/114793725/3a24b89a-24b3-45c8-a2b1-85923dddc63d" width="70">
+                </a>
+            </td>
+            <td style="border: none; font-weight: bold; font-size: 20px; line-height: 1; padding-bottom: 5px;">High School for the Gifted VNU-HCM</td>
+        </tr>
+        <tr>
+            <td style="border: none; font-size: 20px; font-style:italic; line-height: 1; padding-top: 5px;">High School Diploma - KC3 1922</td>
+        </tr>
+    </table>
+</section>
+
+<br><br>
+  
+<section id="experience">
+    <h1>💼 Experience</h1>
+    <hr>
+    <div class="timeline-container">
+        <div class="timeline-block">
             <div class="milestone">Undergraduate Research Assistant, Insight Computer Architecture Lab</div>
             <div class="details">
                 Exploring GPU computing and deep learning optimization through hands-on research and collaboration with graduate students.
-                <button class="close" onclick="document.getElementById('toggle-detail-1').checked = false;">&times;</button>
             </div>
-        </label>
+        </div>
+        <div class="timeline-block">
+            <div class="milestone">Undergraduate Research Assistant - Enhancing Learning through Interactive GUI, UVA</div>
+            <div class="details">
+                Leading a team to create interactive Python and MATLAB GUIs for enhancing Multivariable Calculus learning at UVA, focusing on visualizing complex concepts and facilitating practical application in lectures.
+            </div>
+        </div>
+        <div class="timeline-block">
+            <div class="milestone">Undergraduate Research Assistant - Machine-learned potentials for high-entropy alloys properties, UVA</div>
+            <div class="details">
+                Investigating thermal properties of high-entropy alloys using molecular dynamics simulations on UVA’s Rivanna supercomputer.            </div>
+        </div>
+        <div class="timeline-block">
+            <div class="milestone">Developer Intern, SHIFT ASIA</div>
+            <div class="details">
+                Enhancing existing e-commerce sales forecasting models and making regression models for predicting SAT scores for future interns, significantly improving prediction accuracy and efficiency.
+            </div>
+        </div>
+        <div class="timeline-block">
+            <div class="milestone">Teaching Assistant and Grader, UVA</div>
+            <div class="details">
+                Collaborate with Professors to support students in Ordinary Differential Equations, Multivariable Calculus, and Intro to Physics courses.                
+            </div>
+        </div>
+        <div class="timeline-block">
+            <div class="milestone">CORE Scholar Peer Academic Mentor, UVA</div>
+            <div class="details">
+                Enhancing STEM education for CORE Scholar students through academic support, course guidance, and community-building activities.
+            </div>
+        </div>
+        <!-- Other timeline blocks omitted for brevity -->
     </div>
-    <!-- Add more timeline blocks as needed -->
+</section>
+
+<br><br>
+  
+<section id="featured-projects">
+    <h1>💻 Featured Projects</h1>
+    <hr>
+    <table style="border-collapse: collapse; border: none;">
+        <tr>
+            <td style="border: none; width:50%;">
+                <p align="center">
+                    <a href="https://github.com/huy310304/SAT-score-prediction"><img src="../images/SAT_896_942.png" width="100%" alt="SAT Project Pic"></a>
+                </p>
+            </td>
+            <td style="border: none; width:50%">
+                <p align="center">
+                    <a href="https://github.com/huy310304/MATLAB-GUI-main"><img src="../images/MATLAB_896_942.png" width="100%" alt="Matlab GUI Pic"></a>
+                </p>
+            </td>
+        </tr>
+    </table>
 </section>
 
 </body>
 </html>
+<!-- Table for generating the image to get clicking effect-->
+<!-- For future project, generate the image so that it have the same dimensions-->
 
-</body>
-</html>
+<!--
+<table>
+  <tr>
+    <td width="50%">
+      <div style="background-color: lightgrey; padding: 10px;">
+        <div onclick="window.location='URL_TO_PROJECT_1';" style="cursor: pointer; background-color: white; padding: 10px;">
+          <h1 align="center">SAT Score Prediction</h1>
+          <p align="center">
+            <img src="https://github.com/huy310304/huy310304.github.io/assets/114793725/550f5f46-6556-44dd-b3e4-b333760e8d43" style="width:70%;" alt="Project 1 Screenshot"/>
+          </p>
+          <p>This project employs custom-built neural network models with PyTorch and Numpy to predict SAT scores from GPA and other factors.</p>
+          <p align="center">
+            <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" alt="Python"/>
+            <img src="https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?&style=flat&logo=PyTorch&logoColor=white" alt="Pytorch"/>
+            <img src="https://img.shields.io/badge/Numpy-%23013243.svg?&style=flat&logo=numpy&logoColor=white" alt="Numpy"/>
+            <img src="https://img.shields.io/badge/Pandas-%23150458.svg?style=flat&logo=pandas&logoColor=white" alt="Pandas"/>
+          </p>
+        </div>
+      </div>
+    </td>
+    <td width="50%">
+      <div style="background-color: lightgrey; padding: 10px;">
+        <div onclick="window.location='URL_TO_PROJECT_2';" style="cursor: pointer; background-color: white; padding: 10px;">
+          <h1 align="center">MATLAB GUI</h1>
+          <p align="center">
+            <img src="../images/vector_field_line_integral_3d.png" width="70%" alt="MATLAB GUI pic"/>
+          </p>
+          <p>Simplification of Multivariable Calculus concepts using MATLAB UI App for generating vectors field with vector line integral calculations.</p>
+          <p align="center">
+            <img src="https://img.shields.io/badge/Calculus-FF0000.svg?style=flat&logo=libreofficemath&logoColor=white" alt="Calculus"/>
+            <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" alt="Python"/>
+            <img src="https://img.shields.io/badge/MATLAB-F58025?style=flat&logo=matlab&logoColor=white" alt="MATLAB"/>
+          </p>
+        </div>
+      </div>
+    </td>
+  </tr>
+</table>
+-->
